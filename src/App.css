@@ -1,0 +1,404 @@
+CSS CODE
+
+/* ================= GLOBAL ================= */
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ================= COMMON CARD ================= */
+
+.card {
+  background: rgb(255, 255, 255);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  width: 400px;
+  max-width: 90%;
+  z-index: 2;
+}
+
+/* ================= BUTTONS ================= */
+
+button {
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.yes {
+  background: #ff4d7d;
+  color: white;
+}
+
+.no {
+  background: #ccc;
+}
+
+.small {
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+/* ================= PAGE 1 ================= */
+
+.page {
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+}
+
+.koala {
+  position: absolute;
+  opacity: 0.25;
+  pointer-events: none;
+
+  --x: 0px;
+  --y: 0px;
+
+  animation: floatKoala 6s ease-in-out infinite;
+  transform: translate(var(--x), var(--y));
+}
+
+@keyframes floatKoala {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* ================= PAGE 2 CLEAN ================= */
+
+.page2 {
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 80px;
+
+  background: linear-gradient(
+    135deg,
+    #ff9a9e,
+    #fad0c4,
+    #fbc2eb
+  );
+
+  text-align: center;
+}
+
+/* TITLE */
+
+.page2 .title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 40px;
+  max-width: 500px;
+
+  color: black; /* ✅ solid black text */
+
+  margin-bottom: 25px;
+}
+
+/* IMAGE */
+
+.page2 .image {
+  width: 240px;
+  max-width: 80%;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.2),
+    0 0 25px rgba(255,150,150,0.3);
+
+  transition: 0.3s ease;
+}
+
+.page2 .image:hover {
+  transform: scale(1.05);
+}
+
+/* SUBTEXT */
+
+.page2 .subtitle {
+  margin-top: 15px;
+  font-family: 'Poppins', sans-serif;
+  color: #444;
+  font-size: 14px;
+}
+
+/* PLANE BUTTON */
+
+.page2 .plane {
+  position: absolute;
+  bottom: 30px;
+
+  font-size: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.page2 .plane {
+  bottom: 10px;
+  transform: scale(1.1);
+}
+
+@keyframes floatPlane {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.page2 .plane.fly {
+  transform: translateX(500px) translateY(-250px) rotate(35deg);
+  transition: 0.8s ease;
+}
+
+/* ================= PAGE 3 (SPAIN) ================= */
+
+.spain {
+  background: url("./spain2.JPG") center/cover no-repeat;
+  animation: fadeIn 1.2s ease;
+}
+
+.spain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(0,0,0,0.2), rgba(0,0,0,0.6));
+  pointer-events: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(1.02); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* TEXT */
+.spain .card h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 42px;
+
+  background: linear-gradient(90deg, #ffcc70, #ff8177, #ffd700, #ff6ec7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: gradientShift 6s infinite linear;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0%; }
+  100% { background-position: 300%; }
+}
+
+.spain .card p {
+  font-family: 'Poppins', sans-serif;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+/* BUTTON */
+.spain button {
+  position: relative;
+  z-index: 2;
+  margin-top: 60px;
+  padding: 14px 28px;
+
+  font-size: 20px;
+  border-radius: 40px;
+
+  background: linear-gradient(135deg, #ff8177, #ffcc70);
+  color: white;
+
+  box-shadow:
+    0 0 15px rgba(255, 150, 100, 0.6),
+    0 0 30px rgba(255, 100, 150, 0.4);
+
+  animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+.spain button:hover {
+  transform: scale(1.15);
+}
+
+/* SPARKLES */
+.sparkle {
+  position: absolute;
+  font-size: 14px;
+  opacity: 0;
+  animation: twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0; transform: scale(0.5); }
+  30% { opacity: 1; transform: scale(1.4); }
+  100% { opacity: 0; }
+}
+
+/* ================= PAGE 4 (MUSIC) ================= */
+
+.music {
+  background: linear-gradient(
+    to top,
+    #0b1a3a,
+    #1e3c72,
+    #5f8fd8
+  );
+  color: white;
+}
+
+/* CLOUDS */
+.cloud {
+  position: absolute;
+  width: 120px;
+  height: 60px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 50%;
+  filter: blur(20px);
+  animation: floatCloud 20s linear infinite;
+}
+
+@keyframes floatCloud {
+  from { transform: translateX(-100px); }
+  to { transform: translateX(100vw); }
+}
+
+/* TEXT */
+.text-container {
+  max-width: 600px;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.text-container p {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  line-height: 1.8;
+  color: #f5f7ff;
+
+  text-shadow:
+    0 0 10px rgba(255,255,255,0.25),
+    0 0 30px rgba(150,200,255,0.15);
+
+  animation: cinematicFade 1.8s ease forwards;
+}
+
+@keyframes cinematicFade {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* BUTTONS */
+.start-btn {
+  padding: 12px 20px;
+  border-radius: 20px;
+}
+
+.next-btn {
+  margin-top: 40px;
+  padding: 12px 26px;
+  border-radius: 30px;
+
+  background: rgba(255,255,255,0.15);
+  color: white;
+
+  backdrop-filter: blur(6px);
+
+  box-shadow: 0 0 20px rgba(255,255,255,0.2);
+}
+
+.next-btn:hover {
+  transform: scale(1.1);
+}
+.typewriter {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  color: #f5f7ff;
+
+  display: inline-block;   /* IMPORTANT */
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid white;
+
+  animation: typing 2.5s steps(40, end),
+             blink 0.7s infinite;
+}
+
+@keyframes typing {
+  from { max-width: 0 }
+  to { max-width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+/* ================= PAGE 5 ================= */
+
+.final {
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+  color: white;
+  text-align: center;
+}
+
+.final-text {
+  font-size: 22px;
+  max-width: 600px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.final-btn {
+  padding: 14px 26px;
+  border-radius: 30px;
+  background: #ff4d7d;
+  color: white;
+  font-size: 16px;
+}
+
+.final-message {
+  font-size: 28px;
+  line-height: 2;
+  animation: fadeInFinal 2s ease forwards;
+}
+
+@keyframes fadeInFinal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
