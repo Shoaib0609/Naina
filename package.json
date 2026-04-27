@@ -2,7 +2,7 @@
   "name": "naina-site",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://Shoaib0609.github.io/naina-site",
+  "homepage": ".",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
