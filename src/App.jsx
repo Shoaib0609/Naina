@@ -148,7 +148,7 @@ useEffect(() => {
       </h1>
 
       <img
-        src="/your-image.JPG"
+        src={process.env.PUBLIC_URL + "/shoaib.JPG"}
         alt="memory"
         className="image"
       />

@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/naina-site/static/css/main.c58e6bc5.css",
+    "main.js": "/naina-site/static/js/main.b3891f97.js",
+    "static/media/spain2.JPG": "/naina-site/static/media/spain2.6d7500a9225d7994c295.JPG",
+    "index.html": "/naina-site/index.html",
+    "main.c58e6bc5.css.map": "/naina-site/static/css/main.c58e6bc5.css.map",
+    "main.b3891f97.js.map": "/naina-site/static/js/main.b3891f97.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c58e6bc5.css",
+    "static/js/main.b3891f97.js"
+  ]
+}
